@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemon-team';
+
+  pokemonSearchTerm: string | number = ''
+
+  fillPokemonSearchTerm(value: string | number) {
+    this.pokemonSearchTerm = value
+  }
 }
