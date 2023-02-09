@@ -11,8 +11,6 @@ export class PokemonCardComponent implements OnInit {
     private sharePokemonDataService: SharePokemonDataService
   ) {}
 
-  catchPokemonButtonText = "Try to catch Pokemon"
-
   pokemonName = ''
   pokemonSprite = ''
   pokemonTypes: string[] = []
