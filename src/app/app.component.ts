@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'pokemon-team';
 
   pokemonSearchTerm: string | number = ''
+
+  convertToLowerCase(event: string) {
+    this.pokemonSearchTerm = event.toLowerCase();
+  }
 }

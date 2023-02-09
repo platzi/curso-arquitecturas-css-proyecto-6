@@ -1,5 +1,6 @@
 <app-search-bar
   [(ngModel)]="pokemonSearchTerm"
+  (ngModelChange)="convertToLowerCase($event)"
   name="pokemonNameID"
   ngDefaultControl>
 </app-search-bar>
