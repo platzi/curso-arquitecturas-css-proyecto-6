@@ -29,13 +29,17 @@ export class CapturePokemonButtonComponent {
 
   tryToCapturePokemon(myNewPokemon: Pokemon) {
     this.randomNumber = Number(Math.random().toFixed(2)) * 100
+
     if (this.randomNumber % 2 === 0) {
       this.sharePokemonInfoService.capturePokemon(myNewPokemon)
-      this.tryAgainMessage = ''
-      this.tryAgainError = false
+      this.tryAgainMessage = 'You captured the pokemon!'
     } else {
       this.tryAgainMessage = 'Oh no! The pokemon broke out of the pokeball! Try again!'
-      this.tryAgainError = true
     }
+    this.tryAgainError = true
+
+    setTimeout(() => {
+      this.tryAgainError = false
+    }, 3000)
   }
 }
