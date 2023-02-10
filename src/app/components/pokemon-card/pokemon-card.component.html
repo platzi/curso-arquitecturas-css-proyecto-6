@@ -2,7 +2,7 @@
   <h3>{{ pokemonName }}</h3>
   <img [src]="pokemonSprite" [alt]="pokemonName" *ngIf="pokemonSprite">
   <ul *ngIf="pokemonTypes.length > 0">
-    <li *ngFor="let type of pokemonTypes">
+    <li *ngFor="let type of pokemonTypes" [className]="type">
       {{ type }}
     </li>
   </ul>
