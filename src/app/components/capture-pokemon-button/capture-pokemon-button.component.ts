@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SharePokemonInfoService } from 'src/app/services/share-pokemon-info.service'
+import { Pokemon } from 'src/app/models/pokemon.model';
 
 @Component({
   selector: 'app-capture-pokemon-button',
@@ -7,13 +9,25 @@ import { Component } from '@angular/core';
 })
 export class CapturePokemonButtonComponent {
 
+  constructor(
+    private sharePokemonInfoService: SharePokemonInfoService,
+  ) {}
+
   randomNumber = 0
 
-  tryToCaptyrePokemon() {
+  @Input() myNewPokemon: Pokemon = {
+    id: '',
+    name: '',
+    sprites: {
+      front_default: ''
+    },
+    types: []
+  }
+
+  tryToCapturePokemon(myNewPokemon: Pokemon) {
     this.randomNumber = Number(Math.random().toFixed(2)) * 100
-    console.log(this.randomNumber)
     if (this.randomNumber % 2 === 0) {
-      console.log('you catched it!')
+      this.sharePokemonInfoService.capturePokemon(myNewPokemon)
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/models/pokemon.model';
 import { SharePokemonDataService } from 'src/app/services/share-pokemon-data.service';
 
 @Component({
@@ -15,6 +16,15 @@ export class PokemonCardComponent implements OnInit {
   pokemonSprite = ''
   pokemonTypes: string[] = []
 
+  myNewPokemon: Pokemon = {
+    id: '',
+    name: '',
+    sprites: {
+      front_default: ''
+    },
+    types: []
+  }
+
   ngOnInit() {
     this.sharePokemonDataService.pokemon$.subscribe(pokemon => {
       this.pokemonName = pokemon.name
@@ -23,6 +33,7 @@ export class PokemonCardComponent implements OnInit {
       pokemon.types.map(value => {
         this.pokemonTypes.push(value.type.name);
       })
+      this.myNewPokemon = pokemon
     })
   }
 
