@@ -1,2 +1,11 @@
-<button (click)="tryToCapturePokemon(myNewPokemon)">Try to capture pokemon</button>
+<button (click)="tryToCapturePokemon(myNewPokemon)">
+  <div class="pokeball unselected">
+    <div class="upper-half"></div>
+    <div class="lower-half"></div>
+    <div class="base"></div>
+    <div class="inner-circle"></div>
+    <div class="indicator visible"></div>
+    <div class="indicator-inner"></div>
+  </div>
+</button>
 <p *ngIf="tryAgainError">{{ tryAgainMessage }}</p>
