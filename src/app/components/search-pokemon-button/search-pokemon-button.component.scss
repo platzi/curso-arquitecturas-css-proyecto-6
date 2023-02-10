@@ -1,0 +1,27 @@
+$font-family: 'IBM Plex Mono';
+$yellow: #ede549;
+
+.searchPokemonButton {
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-family: $font-family;
+  border: none;
+  background-color: $yellow;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    background-color: #1bdf94;
+  }
+
+  &:not(:hover) {
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    transition: all 0.5s;
+  }
+}

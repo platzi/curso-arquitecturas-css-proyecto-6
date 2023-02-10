@@ -1,3 +1,8 @@
+$font-family: 'IBM Plex Mono';
+
 .searchBar {
   width: 90vw;
+  font-size: 1.1em;
+  border-radius: 5px;
+  font-family: $font-family;
 }

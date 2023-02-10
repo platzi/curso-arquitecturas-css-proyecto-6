@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap');
+$font-family: 'IBM Plex Mono';
 
 body {
   background: #cb2d3e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Blinker', sans-serif;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: $font-family;
 }
 
 app-root {
