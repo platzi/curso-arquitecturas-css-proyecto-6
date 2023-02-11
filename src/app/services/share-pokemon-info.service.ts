@@ -7,9 +7,6 @@ import { Pokemon } from '../models/pokemon.model';
   providedIn: 'root'
 })
 export class SharePokemonInfoService {
-
-  constructor() { }
-
   private myPokemonTeam: Pokemon[] = [];
   private myTeam = new BehaviorSubject<Pokemon[]>([]);
 

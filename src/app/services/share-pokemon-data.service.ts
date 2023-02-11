@@ -7,9 +7,6 @@ import { Pokemon } from '../models/pokemon.model';
   providedIn: 'root'
 })
 export class SharePokemonDataService {
-
-  constructor() { }
-
   private myPokemon: Pokemon = {
     id: '',
     name: '',
