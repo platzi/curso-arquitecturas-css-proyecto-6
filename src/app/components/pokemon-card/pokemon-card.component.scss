@@ -44,6 +44,18 @@ $fairy: #f0b5bb;
   margin-top: 15px;
 }
 
+@media screen and (min-width: 768px) {
+  .pokemonCard {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .pokemonCard {
+    width: 20%;
+  }
+}
+
 .normal { background-color: $normal ; }
 .fire { background-color: $fire ; }
 .water { background-color: $water ; }
