@@ -1,23 +1,31 @@
-$normal: #a8a878;
-$fire: #f08030;
-$water: #6890f0;
-$grass: #78c850;
-$electric: #f8d030;
-$ice: #98d8d8;
-$fighting: #bf2f27;
-$poison: #a040a0;
-$ground: #e0c068;
-$flying: #a890f0;
-$psychic: #f85888;
-$bug: #a8b820;
-$rock: #b8a038;
-$ghost: #705898;
-$dark: #705848;
-$dragon: #7038f8;
-$steel: #b8b8d0;
-$fairy: #f0b5bb;
+$colors: (
+  normal: #a8a878,
+  fire: #f08030,
+  water: #6890f0,
+  grass: #78c850,
+  electric: #f8d030,
+  ice: #98d8d8,
+  fighting: #bf2f27,
+  poison: #a040a0,
+  ground: #e0c068,
+  flying: #a890f0,
+  psychic: #f85888,
+  bug: #a8b820,
+  rock: #b8a038,
+  ghost: #705898,
+  dark: #705848,
+  dragon: #7038f8,
+  steel: #b8b8d0,
+  fairy: #f0b5bb
+);
 
-.pokemonCard {
+@each $color, $value in $colors {
+  [class*="#{$color}"] {
+    background-color: $value;
+  }
+}
+
+.pokemon-card {
   background: rgba( 255, 255, 255, 0.55 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 0px );
@@ -26,51 +34,27 @@ $fairy: #f0b5bb;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+}
 
-  & ul {
-    & li {
-      margin: 2px;
-      border-radius: 5px;
-      padding: 2px;
-    }
+.pokemon-card-size {
+  width: 60%;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
+  @media screen and (min-width: 1025px) {
+    width: 20%;
   }
 }
 
-.capturePokemonButton {
+.pokemon-tag {
+  margin: 2px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.pokemon-capture-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
 }
-
-@media screen and (min-width: 768px) {
-  .pokemonCard {
-    width: 40%;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .pokemonCard {
-    width: 20%;
-  }
-}
-
-.normal { background-color: $normal ; }
-.fire { background-color: $fire ; }
-.water { background-color: $water ; }
-.grass { background-color: $grass ; }
-.electric { background-color: $electric ; }
-.ice { background-color: $ice ; }
-.fighting { background-color: $fighting ; }
-.poison { background-color: $poison ; }
-.ground { background-color: $ground ; }
-.flying { background-color: $flying ; }
-.psychic { background-color: $psychic ; }
-.bug { background-color: $bug ; }
-.rock { background-color: $rock ; }
-.ghost { background-color: $ghost ; }
-.dark { background-color: $dark ; }
-.dragon { background-color: $dragon ; }
-.steel { background-color: $steel ; }
-.fairy { background-color: $fairy ; }
