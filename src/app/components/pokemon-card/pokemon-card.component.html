@@ -1,8 +1,17 @@
-<section class="pokemonCard" *ngIf="pokemonName">
+<section
+  *ngIf="pokemonName"
+  class="pokemon-card pokemon-card-size">
   <h3>{{ pokemonName }}</h3>
-  <img [src]="pokemonSprite" [alt]="pokemonName" *ngIf="pokemonSprite">
-  <ul *ngIf="pokemonTypes.length > 0">
-    <li *ngFor="let type of pokemonTypes" [className]="type">
+  <img
+    *ngIf="pokemonSprite"
+    [src]="pokemonSprite"
+    [alt]="pokemonName">
+  <ul
+    *ngIf="pokemonTypes.length > 0">
+    <li
+      *ngFor="let type of pokemonTypes"
+      [class]="type"
+      class="pokemon-tag">
       {{ type }}
     </li>
   </ul>
@@ -11,6 +20,4 @@
 <app-capture-pokemon-button
   *ngIf="pokemonName"
   [myNewPokemon]="myNewPokemon"
-  class="capturePokemonButton"
->
-</app-capture-pokemon-button>
+  class="pokemon-capture-button" />
